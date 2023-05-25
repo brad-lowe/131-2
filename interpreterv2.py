@@ -3,10 +3,10 @@ The module that brings it all together! We intentionally keep this as small as p
 delegating functionality to various modules.
 """
 
-from classv1 import ClassDef
+from classv2 import ClassDef
 from intbase import InterpreterBase, ErrorType
 from bparser import BParser
-from objectv1 import ObjectDef
+from objectv2 import ObjectDef
 
 
 class Interpreter(InterpreterBase):
@@ -40,10 +40,17 @@ class Interpreter(InterpreterBase):
 
         # call main function in main class; return value is ignored from main
         self.main_object.call_method(
-            InterpreterBase.MAIN_FUNC_DEF, [], invalid_line_num_of_caller
+            InterpreterBase.MAIN_FUNC_DEF, False, [], invalid_line_num_of_caller
         )
 
         # program terminates!
+
+    def run_file(self, file):
+        """
+        For testing only, runs a file for easy creation of test cases
+        """
+        f = open(file, "r")
+        self.run(f.readlines())
 
     def instantiate(self, class_name, line_num_of_statement):
         """

@@ -29,3 +29,6 @@ class EnvironmentManager:
         Set data associated with a variable name.
         """
         self.environment[symbol] = value
+
+    #def __str__(self):
+        #print(self.environment)

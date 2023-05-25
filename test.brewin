@@ -1,0 +1,22 @@
+(class person
+   (field string name "")
+   (field int age 0)
+   (method void init ((string n) (int a)) (begin (set name n) (set age a)))
+   (method void talk ((string to_whom)) (print name " says hello to " to_whom))
+   (method int get_age () (return age))
+)
+
+(class main
+ (field person p null)
+ (method void tell_joke ((string to_whom)) (print "Hey " to_whom ", knock knock!"))
+ (method void main ()
+   (begin
+      (call me tell_joke "Leia")  # calling method in the current obj
+      (set p (new person))    
+      (call p init "Siddarth" 25)  # calling method in other object
+      (call p talk "Boyan")        # calling method in other object
+      (call p talk 2) 
+      (print "Siddarth's age is " (call p get_age))
+   )
+ )
+)

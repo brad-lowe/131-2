@@ -1,0 +1,14 @@
+(class main
+    (field int a 2)
+    (field string b "c")
+    (method void foo ((int param1) (string param2))
+        (begin
+            (set param1 param2)
+            (print param1)
+            (print param2)
+        )
+    )
+    (method void main ()
+        (call me foo a b)
+    )
+)

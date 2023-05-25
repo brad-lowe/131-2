@@ -1,0 +1,13 @@
+(class main
+    (field int num 0)
+    (field string str "g")
+    (method void main ()
+        (begin
+            (print "Enter an integer:")
+            (inputi num)
+            (print "Enter a string:")
+            (inputs str)
+            (print "Num: " num " Str: " str)
+        )
+   )
+)

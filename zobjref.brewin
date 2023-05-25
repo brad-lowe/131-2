@@ -1,0 +1,18 @@
+(class person
+    (field int a 0)
+    (method void say () (print "no"))
+)
+
+(class student inherits person
+    (field int a 0)
+    (method void say () (print "no"))
+)
+
+(class main
+    (field student z null)
+    (method void main ()
+        (let ((person b null))
+            (print (== z b))
+        )
+    )
+)

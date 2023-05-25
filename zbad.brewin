@@ -1,0 +1,16 @@
+(class main
+  (method int value_or_zero ((integer q)) # "integer" not allowed
+     (begin
+       (if (< q 0)
+         (print "q is less than zero")
+         (return q)
+       )
+    )
+  )
+  (method void main ()
+    (begin
+      (print (call me value_or_zero 10))
+      (print (call me value_or_zero -10))
+    )
+  )
+) 

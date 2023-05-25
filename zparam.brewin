@@ -1,0 +1,34 @@
+(class a
+    (field int x 5)
+    (method int m1 ()
+        (return x)
+    )
+)
+
+(class b inherits a
+    (field string y "string")
+    (method string m1 ()
+        (return y)
+    )
+)
+
+(class main
+    (field a a_ null)
+    (field b b_ null)
+
+
+
+    (method void main ()
+        (begin
+            (set a_ (new b))
+            (set b_ a_)
+
+            (print (call b_ m1))
+
+            (set b_ (new a))
+
+            (set a_ null)
+            (print a_)
+        )
+    )
+)
